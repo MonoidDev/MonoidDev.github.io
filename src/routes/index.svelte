@@ -1,5 +1,6 @@
 <script>
 	import successkid from 'images/successkid.jpg';
+  import { _ } from 'svelte-i18n';
 </script>
 
 <style lang="postcss">
@@ -32,11 +33,13 @@
 	<title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<h1>{$_('companyName')}</h1>
 
 <figure>
 	<img alt='Success Kid' src="{successkid}">
-	<figcaption>Have fun with Sapper!</figcaption>
+	<figcaption>
+		Have fun with Sapper!
+	</figcaption>
 </figure>
 
 <p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>

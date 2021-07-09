@@ -2,6 +2,11 @@
 	import Nav from '../components/Nav.svelte';
 	import GlobalStyle from "../components/GlobalStyles.svelte";
 
+  import { isLoading, waitLocale } from 'svelte-i18n';
+  export async function preload(page) {
+    return waitLocale();
+  }
+
 	export let segment: string;
 </script>
 
@@ -16,9 +21,13 @@
 	}
 </style>
 
-<Nav {segment}/>
+{#if $isLoading}
+  <div class="loading">Loading...</div>
+{:else}
+	<Nav {segment}/>
 
-<main>
-	<GlobalStyle />
-	<slot></slot>
-</main>
+	<main>
+		<GlobalStyle />
+		<slot />
+	</main>
+{/if}
