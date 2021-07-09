@@ -34,7 +34,10 @@ export default {
 				},
 			}),
 			svelte({
-				preprocess: sveltePreprocess({ sourceMap: dev }),
+				preprocess: sveltePreprocess({
+					postcss: true,
+					sourceMap: dev,
+				}),
 				compilerOptions: {
 					dev,
 					hydratable: true
