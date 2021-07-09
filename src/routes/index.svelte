@@ -118,7 +118,7 @@
 >
   <div class="content p-6">
     <h1>
-      Contact Us
+      Contact
     </h1>
     
     <div
