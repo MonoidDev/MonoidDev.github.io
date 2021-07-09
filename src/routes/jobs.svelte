@@ -91,7 +91,7 @@ import Button from '../components/Button.svelte';
 		</div>
 
 		<h2>
-			👬 Fronted Engineer
+			👬 Frontend Engineer
 		</h2>
 
 
