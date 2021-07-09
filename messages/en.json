@@ -1,3 +1,9 @@
 {
-  "companyName": "G.K. Monoid"
+  "companyName": "G.K. Monoid",
+  "nav": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "about": "About"
+  },
+  "slogan": "The next new thing"
 }

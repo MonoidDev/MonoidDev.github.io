@@ -1,12 +1,29 @@
 <script lang="typescript">
+  import { _ } from 'svelte-i18n';
+
   export let segment: string;
+
+  interface Page {
+    value: string;
+    label: string;
+  }
+
+  let pages: Page[];
+  $: pages = [
+    {
+      value: 'home',
+      label: $_('nav.home'),
+    },
+    {
+      value: 'jobs',
+      label: $_('nav.jobs'),
+    },
+  ];
 </script>
 
 <style type="text/postcss">
   nav {
-    border-bottom: 1px solid rgba(255, 62, 0, 0.1);
-    font-weight: 300;
-    padding: 0 1em;
+    @apply border-b border-gray-200 font-mono;
   }
 
   ul {
@@ -35,9 +52,10 @@
     content: '';
     width: calc(100% - 1em);
     height: 2px;
-    background-color: rgb(255, 62, 0);
     display: block;
     bottom: -1px;
+
+    @apply bg-gray-700;
   }
 
   a {
@@ -49,11 +67,18 @@
 
 <nav>
   <ul>
-    <li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-    <li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
-
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-         the blog data when we hover over the link or tap it on a touchscreen -->
-    <li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
+    {#each pages as page}
+      <li>
+        <a
+          aria-current="{
+            (segment === page.value || (segment === undefined && page.value === 'home')) 
+              ? 'page' : undefined
+          }"
+          href="{page.value === 'home' ? '.' : page.value}"
+        >
+          {page.label}
+        </a>
+      </li>
+    {/each}
   </ul>
 </nav>

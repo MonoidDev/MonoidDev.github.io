@@ -4,5 +4,8 @@
   "scss.validate": false,
   "tailwindCSS.includeLanguages": {
     "svelte": "html"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
   }
 }

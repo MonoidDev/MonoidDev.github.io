@@ -1,3 +1,8 @@
 {
-  "companyName": "亚群科技"
+  "companyName": "亚群科技",
+  "nav": {
+    "home": "主页",
+    "jobs": "工作",
+    "about": "关于"
+  }
 }
