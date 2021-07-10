@@ -62,7 +62,7 @@
       class="m-6 text-gray-700"
     >
       <p>
-        🌍 Located at Tokyo, Monoid empowers the Internet with creativity and technology.
+        🌍 Located in Tokyo, Monoid empowers the Internet with creativity and technology.
       </p>
       <p>
         📱 Monoid is a group of creative young people eager to make your world-changing apps for the next era.
@@ -123,7 +123,7 @@
 >
   <div class="content p-6">
     <h1>
-      Contact Us
+      Contact
     </h1>
     
     <div

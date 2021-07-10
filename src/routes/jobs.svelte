@@ -97,7 +97,7 @@
 		</div>
 
 		<h2>
-			👬 Fronted Engineer
+			👬 Frontend Engineer
 		</h2>
 
 
