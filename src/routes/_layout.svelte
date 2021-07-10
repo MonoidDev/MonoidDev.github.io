@@ -1,6 +1,7 @@
 <script lang="ts">
   import Nav from '../components/Nav.svelte';
   import GlobalStyle from "../components/GlobalStyles.svelte";
+  import { _ } from 'svelte-i18n';
 
   import logo from 'images/logo.png';
 
@@ -20,6 +21,10 @@
 
 <svelte:head>
   <link rel="icon" type="image/png" href="{logo}" />
+  <meta
+    name="description"
+    content="{$_("description")}"
+  />
 </svelte:head>
 
 {#if $isLoading}
