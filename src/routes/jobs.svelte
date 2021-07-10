@@ -1,7 +1,9 @@
 <script>
   import logo from 'images/logo.png';
   import { _ } from 'svelte-i18n';
-import Button from '../components/Button.svelte';
+  import { fade } from 'svelte/transition';
+	import Button from '../components/Button.svelte';
+
 </script>
 
 <style type="text/postcss">
@@ -38,7 +40,10 @@ import Button from '../components/Button.svelte';
   <title>G.K. Monoid - Jobs</title>
 </svelte:head>
 
-<section style="min-height: initial; padding: 0.5rem">
+<section
+	style="min-height: initial; padding: 0.5rem"
+	transition:fade="{{ duration: 300 }}"
+>
 	<div class="content">
 		<img alt="Logo" src="{logo}" height={144} width={144} />
 	</div>
@@ -47,6 +52,7 @@ import Button from '../components/Button.svelte';
 
 <section
   class="bg-gray-50 relative"
+	transition:fade="{{ duration: 300 }}"
 >
   <div class="content p-6">
     <h1>

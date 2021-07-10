@@ -1,5 +1,7 @@
 <script>
   import logo from 'images/logo.png';
+  import { fade } from 'svelte/transition';
+
   import { _ } from 'svelte-i18n';
 </script>
 
@@ -37,7 +39,7 @@
   <title>G.K. Monoid</title>
 </svelte:head>
 
-<section>
+<section transition:fade="{{ duration: 300 }}">
   <div class="content">
     <img class="logo" src="{logo}" alt="Monoid Logo" />
 
@@ -49,6 +51,7 @@
 
 <section
   class="bg-gray-50 relative"
+  transition:fade="{{ duration: 300 }}"
 >
   <div class="content p-6">
     <h1>
@@ -73,6 +76,7 @@
 
 <section
   class="relative"
+  transition:fade="{{ duration: 300 }}"
 >
   <div class="content p-6">
     <h1>
@@ -115,6 +119,7 @@
 
 <section
   class="bg-gray-50"
+  transition:fade="{{ duration: 300 }}"
 >
   <div class="content p-6">
     <h1>
