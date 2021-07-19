@@ -1,5 +1,5 @@
 import {
-	register,
+	addMessages,
 	init,
 	getLocaleFromNavigator,
   getLocaleFromHostname,
@@ -7,6 +7,10 @@ import {
 } from 'svelte-i18n';
 
 import { setCookie, getCookie } from './utils/cookie';
+
+import en from '../messages/en.json';
+import zhCn from '../messages/zh-cn.json';
+import ja from '../messages/ja.json';
 
 const INIT_OPTIONS = {
 	fallbackLocale: 'en',
@@ -18,9 +22,9 @@ const INIT_OPTIONS = {
 
 let currentLocale = null;
 
-register('en', () => import('../messages/en.json'));
-register('zh-cn', () => import('../messages/zh-cn.json'));
-register('ja', () => import('../messages/ja.json'));
+addMessages('en', en);
+addMessages('zh-cn', zhCn);
+addMessages('ja', ja);
 
 $locale.subscribe((value) => {
 	if (value == null) return;

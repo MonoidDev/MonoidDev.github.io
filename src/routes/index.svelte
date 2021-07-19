@@ -7,7 +7,7 @@
 
 <style type="text/postcss">
   img.logo {
-    @apply w-96 h-96 self-center;
+    @apply self-center;
   }
 
   section {
@@ -36,12 +36,12 @@
 </style>
 
 <svelte:head>
-  <title>G.K. Monoid</title>
+  <title>{$_('companyName')}</title>
 </svelte:head>
 
 <section transition:fade="{{ duration: 300 }}">
   <div class="content">
-    <img class="logo" src="{logo}" alt="Monoid Logo" />
+    <img class="logo" height={384} width={384} src="{logo}" alt="Monoid Logo" />
 
     <div class="font-thin text-center text-gray-600 italic font-mono">
       {$_('slogan')}
