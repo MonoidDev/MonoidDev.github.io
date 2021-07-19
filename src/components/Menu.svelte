@@ -41,8 +41,7 @@
   }
 
   button {
-    display: block;
-    padding: 1rem 1rem;
+    @apply block p-4 text-gray-500;
   }
 
   button:hover:disabled {
@@ -54,6 +53,6 @@
   }
 
   .selected {
-    color: #666;
+    @apply text-gray-300;
   }
 </style>

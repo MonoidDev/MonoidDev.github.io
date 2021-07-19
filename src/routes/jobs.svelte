@@ -117,7 +117,7 @@
 				})}
 			</p>
 
-			<a href="mailto:ymao@monoidtech.com" class="mt-6 block">
+			<a href="mailto:ymao@monoidtech.com" class="mt-6 block" target="_blank" rel="noreferrer">
 				<Button title="Apply Now" />
 			</a>
 	
@@ -167,7 +167,7 @@
 				})}
 			</p>
 
-			<a href="mailto:ymao@monoidtech.com" class="mt-6 block">
+			<a href="mailto:ymao@monoidtech.com" class="mt-6 block" target="_blank" rel="noreferrer">
 				<Button title="Apply Now" />
 			</a>
 		</div>
