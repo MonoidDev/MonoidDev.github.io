@@ -5,7 +5,6 @@ export function clickOutside(node: Node) {
       node.dispatchEvent(
         new CustomEvent('clickoutside', node as any)
       );
-      console.log('dispatched')
     }
   }
 

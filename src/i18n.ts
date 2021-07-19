@@ -1,7 +1,6 @@
 import {
 	addMessages,
 	init,
-	getLocaleFromNavigator,
   getLocaleFromHostname,
 	locale as $locale,
 } from 'svelte-i18n';
@@ -12,7 +11,7 @@ import en from '../messages/en.json';
 import zhCn from '../messages/zh-cn.json';
 import ja from '../messages/ja.json';
 
-const INIT_OPTIONS = {
+export const INIT_OPTIONS = {
 	fallbackLocale: 'en',
 	initialLocale: null,
 	loadingDelay: 200,
