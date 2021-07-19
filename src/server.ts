@@ -15,5 +15,5 @@ express()
 		sapper.middleware(),
 	)
 	.listen(PORT, () => {
-		console.log(`Listening on ${PORT}`)
+		console.log(`Listening on http://localhost:${PORT}`)
 	});

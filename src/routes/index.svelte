@@ -3,6 +3,8 @@
   import { fade } from 'svelte/transition';
 
   import { _ } from 'svelte-i18n';
+  import { i } from '../stores/i18n';
+
 </script>
 
 <style type="text/postcss">
@@ -33,6 +35,10 @@
     @apply text-gray-200;
   }
 
+  a.email {
+    text-decoration: underline;
+  }
+
 </style>
 
 <svelte:head>
@@ -55,20 +61,35 @@
 >
   <div class="content p-6">
     <h1>
-      Your next partner
+      {$i({
+        en: 'Your next partner',
+        'zh-cn': '您值得合作的伙伴',
+      })}
     </h1>
     
     <div
       class="m-6 text-gray-700"
     >
       <p>
-        🌍 Located in Tokyo, Monoid empowers the Internet with creativity and technology.
+        🌍
+        {$i({
+          en: 'Located in Tokyo, Monoid empowers the Internet with creativity and technology.',
+          'zh-cn': 'Monoid 位于东京，是一家充满创意和科技的互联网创业公司。',
+        })}
       </p>
       <p>
-        📱 Monoid is a group of creative young people eager to make your world-changing apps for the next era.
+        📱
+        {$i({
+          en: 'Monoid is a group of creative young people eager to make your world-changing apps for the next era.',
+          'zh-cn': '我们时刻为了编写下一个改变世界的 App 准备着。',
+        })}
       </p>
       <p>
-        👌 Monoid listens to customers' voice, designs and creates with advanced skills, only to satisfy your complex and changing needs for your business.
+        👌
+        {$i({
+          en: 'Monoid listens to customer\'s voice, designs and creates with advanced skills, only to satisfy your complex and changing needs for your business.',
+          'zh-cn': '我们聆听客户的声音，用卓越的技能设计和实现复杂而多变的商业软件。',
+        })}
       </p>
     </div>
   </div>
@@ -80,7 +101,10 @@
 >
   <div class="content p-6">
     <h1>
-      Our works
+      {$i({
+        en: 'Our works',
+        'zh-cn': '我们的作品',
+      })}
     </h1>
     
     <div
@@ -88,29 +112,49 @@
     >
       <p>
         <a href="https://wopal.dev">
-          💪 WOPAL - Team-based training app
+          💪 WOPAL -
+          {$i({
+            en: 'Team-based training app',
+            'zh-cn': '面向东京大学等日本高校运动队的训练 App。',
+          })}
         </a>
       </p>
 
       <p>
         <a href="https://www.polijob.jp/">
-          💼 Polijob - Online job platform
+          💼 Polijob -
+          {$i({
+            en: 'Online job platform',
+            'zh-cn': '在线招聘平台',
+          })}
         </a>
       </p>
 
       <p>
         <a href="https://starcharge.com">
-          🌟 Starcharge - China's unicorn in EV charging
+          🌟 Starcharge - 
+          {$i({
+            en: 'China\'s unicorn in EV charging',
+            'zh-cn': '中国的新能源独角兽',
+          })}
         </a>
       </p>
       <p>
         <a href="https://wopal.dev">
-          🚢 D2D Shipping - International shipping company
+          🚢 D2D Shipping -
+          {$i({
+            en: 'International shipping company',
+            'zh-cn': '中日国际物流公司',
+          })}
         </a>
       </p>
       <p>
         <a href="https://iheal.jp">
-          🧘‍♀️ iHeal - Smart aromatherapy and more
+          🧘‍♀️ iHeal -
+          {$i({
+            en: 'Smart aromatherapy and more',
+            'zh-cn': '智能香氛',
+          })}
         </a>
       </p>
     </div>
@@ -123,14 +167,17 @@
 >
   <div class="content p-6">
     <h1>
-      Contact
+      {$i({
+        en: 'Contact',
+        'zh-cn': '联系我们',
+      })}
     </h1>
     
     <div
       class="m-6 text-gray-700"
     >
       <p>
-        📧 Email: <a href="mailto:ymao@monoidtech.com">ymao@monoidtech.com</a>
+        📧 Email: <a class="email" href="mailto:ymao@monoidtech.com">ymao@monoidtech.com</a>
       </p>
       <p>
         📱 Phone: 03-3242-3072

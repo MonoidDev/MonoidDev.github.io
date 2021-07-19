@@ -117,7 +117,6 @@
             }))}
             value={$locale}
             handleClose={() => {
-              console.log(12312)
               languagesMenuOpen = false
             }}
           />

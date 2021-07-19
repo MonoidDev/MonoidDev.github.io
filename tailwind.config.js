@@ -1,8 +1,5 @@
 module.exports = {
-  purge: {
-    enabled: !process.env.ROLLUP_WATCH,
-    content: ['./src/template.html', './src/**/*.svelte'],
-  },
+  purge: ['./src/template.html', './src/**/*.svelte'],
   variants: {},
   theme: {
     extend: {}
