@@ -3,6 +3,7 @@ import {
 	init,
   getLocaleFromHostname,
 	locale as $locale,
+	locales as $locales,
 } from 'svelte-i18n';
 
 import { setCookie, getCookie } from './utils/cookie';
@@ -25,6 +26,8 @@ addMessages('en', en);
 addMessages('zh-cn', zhCn);
 addMessages('ja', ja);
 
+export const availableLocales = ['en', 'zh-cn', 'ja'];
+
 $locale.subscribe((value) => {
 	if (value == null) return;
 
@@ -36,11 +39,13 @@ $locale.subscribe((value) => {
 	}
 });
 
+const hostnamePrefix = getLocaleFromHostname(/^([a-zA-Z-]+)\./);
+
 // initialize the i18n library in client
 export function startClient() {
 	init({
 		...INIT_OPTIONS,
-		initialLocale: getCookie('locale') || getLocaleFromHostname(/([a-zA-Z-]+)\./),
+		initialLocale: getCookie('locale') || (availableLocales.includes(hostnamePrefix) ? hostnamePrefix : undefined),
 	});
 }
 
