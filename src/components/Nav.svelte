@@ -77,7 +77,7 @@
   }
 
   .menu-container {
-    @apply absolute right-0;
+    @apply absolute right-0 z-10;
   }
 </style>
 

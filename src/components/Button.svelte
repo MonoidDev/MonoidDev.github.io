@@ -8,8 +8,8 @@
 
 <style type="text/postcss">
   button {
-    background: #e2e8f0;
-    color: #64748b;
+    background: linear-gradient(to right, #d76d77, #ffaf7b);
+    color: white;
     border: unset;
     border-radius: 6px;
     padding: 0.75rem 1.5rem;
@@ -17,11 +17,10 @@
   }
 
   button:hover {
-    @apply bg-gray-500 text-gray-50;
+    @apply text-gray-100;
   }
 
   button:focus {
-    background: #94a3b8;
-    color: #f1f5f9;
+    @apply text-gray-700;
   }
 </style>
