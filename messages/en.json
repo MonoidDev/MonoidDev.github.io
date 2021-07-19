@@ -3,7 +3,12 @@
   "nav": {
     "home": "Home",
     "jobs": "Jobs",
-    "about": "About"
+    "languages": "Languages"
+  },
+  "languages": {
+    "en": "English",
+    "ja": "日本語",
+    "zh-cn": "简体中文"
   },
   "slogan": "The next new thing",
   "description": "Monoid creates apps with advanced technology to boost your business. Homepage, web app, mobile app and more. "

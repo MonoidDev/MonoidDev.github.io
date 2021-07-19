@@ -37,7 +37,7 @@
 </style>
 
 <svelte:head>
-  <title>G.K. Monoid - Jobs</title>
+  <title>{$_('companyName')} - {$_('nav.jobs')}</title>
 </svelte:head>
 
 <section

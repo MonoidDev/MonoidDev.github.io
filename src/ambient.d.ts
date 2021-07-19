@@ -37,3 +37,9 @@ declare module "*.webp" {
 	const value: string;
 	export default value;
 }
+
+declare namespace svelte.JSX {
+  interface HTMLAttributes<T> {
+    onclickoutside?: () => void
+  }
+}
