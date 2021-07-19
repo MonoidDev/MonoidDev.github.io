@@ -95,13 +95,16 @@ export default {
 				},
 			}),
 			svelte({
-				preprocess: sveltePreprocess({ sourceMap: dev }),
+				preprocess: sveltePreprocess({ 
+					postcss: true,
+					sourceMap: dev,
+				}),
 				compilerOptions: {
 					dev,
 					generate: 'ssr',
 					hydratable: true
 				},
-				emitCss: false
+				emitCss: false,
 			}),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
@@ -118,24 +121,23 @@ export default {
 		preserveEntrySignatures: 'strict',
 		onwarn,
 	},
-
-	serviceworker: {
-		input: config.serviceworker.input().replace(/\.js$/, '.ts'),
-		output: config.serviceworker.output(),
-		plugins: [
-			resolve(),
-			replace({
-				preventAssignment: true,
-				values:{
-					'process.browser': true,
-					'process.env.NODE_ENV': JSON.stringify(mode)
-				},
-			}),
-			commonjs(),
-			typescript({ sourceMap: dev }),
-			!dev && terser()
-		],
-		preserveEntrySignatures: false,
-		onwarn,
-	}
+	// serviceworker: {
+	// 	input: config.serviceworker.input().replace(/\.js$/, '.ts'),
+	// 	output: config.serviceworker.output(),
+	// 	plugins: [
+	// 		resolve(),
+	// 		replace({
+	// 			preventAssignment: true,
+	// 			values:{
+	// 				'process.browser': true,
+	// 				'process.env.NODE_ENV': JSON.stringify(mode)
+	// 			},
+	// 		}),
+	// 		commonjs(),
+	// 		typescript({ sourceMap: dev }),
+	// 		!dev && terser()
+	// 	],
+	// 	preserveEntrySignatures: false,
+	// 	onwarn,
+	// }
 };

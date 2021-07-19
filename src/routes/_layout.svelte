@@ -5,11 +5,6 @@
 
   import logo from 'images/logo.png';
 
-  import { isLoading, waitLocale } from 'svelte-i18n';
-  export async function preload(page) {
-    return waitLocale();
-  }
-
   export let segment: string;
 </script>
 
@@ -27,15 +22,11 @@
   />
 </svelte:head>
 
-{#if $isLoading}
-  <div class="loading">Loading...</div>
-{:else}
-  <Nav {segment}/>
+<Nav {segment}/>
 
-  <GlobalStyle />
-  <slot />
+<GlobalStyle />
+<slot />
 
-  <footer class="footer p-6 flex flex-col items-center text-gray-200">
-    © {new Date().getFullYear()} G.K. Monoid
-  </footer>
-{/if}
+<footer class="footer p-6 flex flex-col items-center text-gray-200">
+  © {new Date().getFullYear()} G.K. Monoid
+</footer>
