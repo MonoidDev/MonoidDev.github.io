@@ -144,7 +144,7 @@
         </a>
       </p>
       <p>
-        <a href="https://wopal.dev">
+        <a href="https://member.d2dasia.com/">
           🚢 D2D Shipping -
           {$i({
             en: 'International shipping company',
@@ -153,7 +153,7 @@
         </a>
       </p>
       <p>
-        <a href="https://iheal.jp">
+        <a href="https://www.iheal.jp">
           🧘‍♀️ iHeal -
           {$i({
             en: 'Smart aromatherapy and more',
