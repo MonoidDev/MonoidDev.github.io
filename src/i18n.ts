@@ -1,11 +1,8 @@
 import {
 	addMessages,
 	init,
-  getLocaleFromHostname,
 	locale as $locale,
-	locales as $locales,
 } from 'svelte-i18n';
-
 import type {
 	Request,
 	Response,
@@ -86,18 +83,18 @@ export function i18nMiddleware() {
 		}
 
 		if (req.headers['accept-language']) {
-			const headerLang: string = req.headers['accept-language'].split(',')[0].trim();
-			if (headerLang.length > 1) {
-				locale = availableLocales.find((available) => available.toLowerCase() === headerLang.toLowerCase()) ?? null;
+			const headerLang: string = req.headers['accept-language'].split(',')[0].trim().replace(/;.*/, '');
+			if (headerLang.length >= 1) {
+				locale = availableLocales.find((available) => headerLang.toLowerCase().startsWith(available.toLowerCase())) ?? null;
 			}
 
 			if (locale !== null && locale !== 'en') {
 				res.redirect(301, `${req.protocol}://${locale}.${req.get('host')}${req.originalUrl}`);
 				return;
 			}
-		} else {
-			locale = INIT_OPTIONS.initialLocale || INIT_OPTIONS.fallbackLocale;
 		}
+
+		locale = INIT_OPTIONS.initialLocale || INIT_OPTIONS.fallbackLocale;
 
 		if (locale !== null && locale !== currentLocale) {
 			$locale.set(locale);

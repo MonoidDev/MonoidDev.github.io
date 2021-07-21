@@ -14,6 +14,6 @@ express()
 		i18nMiddleware(),
 		sapper.middleware(),
 	)
-	.listen(PORT, () => {
+	.listen(parseInt(PORT), '0.0.0.0', () => {
 		console.log(`Listening on http://localhost:${PORT}`)
 	});

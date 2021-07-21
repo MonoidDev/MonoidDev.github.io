@@ -8,10 +8,6 @@
 </script>
 
 <style type="text/postcss">
-  img.logo {
-    @apply w-96 h-96 self-center;
-  }
-
   section {
     /* @apply flex bg-gray-50 p-12 m-12; */
     min-height: 30vh;
