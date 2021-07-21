@@ -2,7 +2,8 @@
   export interface Menu {
     value: string;
     label: string;
-    onPress: () => void;
+    href?: string;
+    onPress?: () => void;
   }
 </script>
 
@@ -14,7 +15,7 @@
   export let handleClose: () => void;
 
   $: onClickMenu = (menu: Menu) => {
-    menu.onPress();
+    menu.onPress?.();
     handleClose();
   }
 </script>
@@ -25,13 +26,15 @@
   on:clickoutside={handleClose}
 >
   {#each menus as menu}
-    <button
-      on:click={menu.value !== value ? () => onClickMenu(menu) : undefined}
+    <a
+      href={menu.href}
+      alt="{menu.label}"
+      on:click={(menu.value !== value && menu.onPress) ? () => onClickMenu(menu) : undefined}
       class={menu.value === value ? "selected" : undefined}
       disabled={menu.value === value}
     >
       {menu.label}
-    </button>
+    </a>
   {/each}
 </div>
 
@@ -40,15 +43,15 @@
     @apply shadow-lg flex flex-col;
   }
 
-  button {
+  a {
     @apply block p-4 text-gray-500;
   }
 
-  button:hover:disabled {
+  a:hover:disabled {
     cursor: initial;
   }
 
-  button:hover:not(:disabled) {
+  a:hover:not(:disabled) {
     @apply bg-gray-200;
   }
 

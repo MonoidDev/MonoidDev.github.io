@@ -6,7 +6,10 @@ import {
 	locales as $locales,
 } from 'svelte-i18n';
 
-import { setCookie, getCookie } from './utils/cookie';
+import type {
+	Request,
+	Response,
+} from 'express';
 
 import en from '../messages/en.json';
 import zhCn from '../messages/zh-cn.json';
@@ -30,22 +33,29 @@ export const availableLocales = ['en', 'zh-cn', 'ja'];
 
 $locale.subscribe((value) => {
 	if (value == null) return;
-
 	currentLocale = value;
-
-	// if running in the client, save the language preference in a cookie
-	if (typeof window !== 'undefined') {
-		setCookie('locale', value);
-	}
 });
 
-const hostnamePrefix = getLocaleFromHostname(/^([a-zA-Z-]+)\./);
+const getFirstMatch = (base: string, pattern: RegExp) => {
+  const match = pattern.exec(base);
+
+  if (!match) return null;
+
+  return match[1] || null;
+};
+
+export function getLocale(hostname: string) {
+	const hostnamePrefix = getFirstMatch(hostname, /^([a-zA-Z-]+)\./);
+	return availableLocales.includes(hostnamePrefix) ? hostnamePrefix : null;
+};
 
 // initialize the i18n library in client
 export function startClient() {
+	const hostnamePrefix = getLocale(window.location.hostname);
+
 	init({
 		...INIT_OPTIONS,
-		initialLocale: getCookie('locale') || (availableLocales.includes(hostnamePrefix) ? hostnamePrefix : undefined),
+		initialLocale: availableLocales.includes(hostnamePrefix) ? hostnamePrefix : undefined,
 	});
 }
 
@@ -56,7 +66,7 @@ export function i18nMiddleware() {
 	// initialLocale will be set by the middleware
 	init(INIT_OPTIONS);
 
-	return (req, res, next) => {
+	return (req: Request, res: Response, next) => {
 		const isDocument = DOCUMENT_REGEX.test(req.originalUrl);
 		// get the initial locale only for a document request
 		if (!isDocument) {
@@ -64,24 +74,36 @@ export function i18nMiddleware() {
 			return;
 		}
 
-		let locale = getCookie('locale', req.headers.cookie);
+		let locale: string | null = null;
 
-		// no cookie, let's get the first accepted language
-		if (locale == null) {
-			if (req.headers['accept-language']) {
-				const headerLang = req.headers['accept-language'].split(',')[0].trim();
-				if (headerLang.length > 1) {
-					locale = headerLang;
-				}
-			} else {
-				locale = INIT_OPTIONS.initialLocale || INIT_OPTIONS.fallbackLocale;
-			}
+		// If the user has already given the language in the hostname, respect the path
+		locale = getLocale(req.hostname);
+
+		if (locale) {
+			$locale.set(locale);
+			next();
+			return;
 		}
 
-		if (locale != null && locale !== currentLocale) {
+		if (req.headers['accept-language']) {
+			const headerLang: string = req.headers['accept-language'].split(',')[0].trim();
+			if (headerLang.length > 1) {
+				locale = availableLocales.find((available) => available.toLowerCase() === headerLang.toLowerCase()) ?? null;
+			}
+
+			if (locale !== null && locale !== 'en') {
+				res.redirect(301, `${req.protocol}://${locale}.${req.get('host')}${req.originalUrl}`);
+				return;
+			}
+		} else {
+			locale = INIT_OPTIONS.initialLocale || INIT_OPTIONS.fallbackLocale;
+		}
+
+		if (locale !== null && locale !== currentLocale) {
 			$locale.set(locale);
 		}
 
 		next();
+		return;
 	};
 };

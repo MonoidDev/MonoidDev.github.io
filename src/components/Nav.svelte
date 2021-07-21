@@ -2,6 +2,7 @@
   import { locale, locales, _ } from 'svelte-i18n';
 
   import { fade } from 'svelte/transition';
+import { availableLocales } from '../i18n';
 
   import Menu from './Menu.svelte';
 
@@ -113,7 +114,10 @@
             menus={$locales.map((item) => ({
               label: $_(`languages.${item}`),
               value: item,
-              onPress: () => locale.set(item),
+              href: window.location.href.replace(
+                new RegExp(`^${window.location.protocol}//((${availableLocales.join('|')})\.)?`),
+                `${window.location.protocol}//${item}.`,
+              ),
             }))}
             value={$locale}
             handleClose={() => {
