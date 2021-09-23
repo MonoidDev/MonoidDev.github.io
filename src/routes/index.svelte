@@ -76,7 +76,7 @@
         {$i({
           en: 'Located in Tokyo, Monoid empowers the Internet with creativity and technology.',
           'zh-cn': 'Monoid 位于东京，是一家充满创意和科技的互联网创业公司。',
-          'ja': 'Monoid社は、創造性のあるスタートアップ企業です。',
+          'ja': 'Monoidは、創造性のあるスタートアップ企業です。',
         })}
       </p>
       <p>
@@ -84,7 +84,7 @@
         {$i({
           en: 'Monoid is a group of creative young people eager to make your world-changing apps for the next era.',
           'zh-cn': '我们时刻为了编写下一个改变世界的 App 准备着。',
-          'ja': 'Monoid社は、次の時代に向けて世界を変えるアプリを作りたいと熱望しているクリエイティブな若者のグループです。',
+          'ja': 'Monoidは、次の時代に向けて世界を変えるアプリを作りたいと熱望しているクリエイティブな若者のグループです。',
         })}
       </p>
       <p>
@@ -92,7 +92,7 @@
         {$i({
           en: 'Monoid listens to customer\'s voice, designs and creates with advanced skills, only to satisfy your complex and changing needs for your business.',
           'zh-cn': '我们聆听客户的声音，用卓越的技能设计和实现复杂而多变的商业软件。',
-          'ja': 'お客様の声に耳を傾け、卓越したスキルを駆使して、ソフトウェアを設計し、開発します。',
+          'ja': 'お客様の声に耳を傾け、卓越したスキルを駆使してソフトウェアを設計・開発します。',
         })}
       </p>
     </div>
