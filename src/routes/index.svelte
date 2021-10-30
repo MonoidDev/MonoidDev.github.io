@@ -120,6 +120,7 @@
           {$i({
             en: 'Team-based training app',
             'zh-cn': '面向东京大学等日本高校运动队的训练 App',
+            ja: '東京大学をはじめとする、学生スポーツのためのトレーニングサービス-Web&Appの設計・デザイン・開発・運営・保守',
           })}
         </a>
       </p>
@@ -128,8 +129,9 @@
         <a href="https://www.polijob.jp/">
           💼 Polijob -
           {$i({
-            en: 'Online job platform',
+            en: 'Online recruitment platform',
             'zh-cn': '在线招聘平台',
+            ja: 'オンライン採用プラットフォーム-Webの設計・デザイン・開発',
           })}
         </a>
       </p>
@@ -138,8 +140,9 @@
         <a href="https://starcharge.com">
           🌟 Starcharge - 
           {$i({
-            en: 'China\'s unicorn in EV charging',
-            'zh-cn': '中国的新能源独角兽',
+            en: 'Homepage with content management system',
+            'zh-cn': '中国的新能源独角兽官网',
+            ja: '中国のエネルギーユニコーン企業のHomepageプロジェクト-Web＆Admin Panelの設計・デザイン・開発',
           })}
         </a>
       </p>
@@ -147,8 +150,9 @@
         <a href="https://member.d2dasia.com/">
           🚢 D2D Shipping -
           {$i({
-            en: 'International shipping company',
-            'zh-cn': '中日国际物流公司',
+            en: 'International shipping platform',
+            'zh-cn': '中日国际物流平台',
+            ja: '国際物流企業のシステム -Web & Admin Panelの設計・デザイン・開発・保守',
           })}
         </a>
       </p>
@@ -156,8 +160,9 @@
         <a href="https://www.iheal.jp">
           🧘‍♀️ iHeal -
           {$i({
-            en: 'Smart aromatherapy and more',
-            'zh-cn': '智能香氛',
+            en: 'Smart aromatherapy IoT device',
+            'zh-cn': '智能香氛APP',
+            ja: 'スマートアロマディフューザーIoTプロジェクト-Web＆APP＆Raspberry Piの設計・デザイン・開発',
           })}
         </a>
       </p>
