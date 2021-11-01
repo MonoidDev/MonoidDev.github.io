@@ -120,7 +120,7 @@
           {$i({
             en: 'Team-based training app',
             'zh-cn': '面向东京大学等日本高校运动队的训练 App',
-            ja: '東京大学をはじめとする、学生スポーツのためのトレーニングサービス-Web&Appの設計・デザイン・開発・運営・保守',
+            ja: '高校生・大学生を中心とした、学生スポーツのためのトレーニングサービス-Web&Appの設計・デザイン・開発・運営・保守',
           })}
         </a>
       </p>
@@ -142,7 +142,7 @@
           {$i({
             en: 'Homepage with content management system',
             'zh-cn': '中国的新能源独角兽官网',
-            ja: '中国のエネルギーユニコーン企業のHomepageプロジェクト-Web＆Admin Panelの設計・デザイン・開発',
+            ja: '中国エネルギー業界におけるユニコーン企業のHomepageプロジェクト-Web＆Admin Panelの設計・デザイン・開発',
           })}
         </a>
       </p>
@@ -152,7 +152,7 @@
           {$i({
             en: 'International shipping platform',
             'zh-cn': '中日国际物流平台',
-            ja: '国際物流企業のシステム -Web & Admin Panelの設計・デザイン・開発・保守',
+            ja: '国際物流関係企業のシステム -Web & Admin Panelの設計・デザイン・開発・保守',
           })}
         </a>
       </p>
